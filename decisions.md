@@ -1,14 +1,5 @@
-# What to do
+# A Login Application flow using React
 
-1. Login Screen
+I designed the Navigation first, and tested out how navigating around the app should feel like.
 
-# How
-
-1. Login:
-
-A box in center which contains 2 fields, UserName and Password.
-
-A button to Log In.
-
-A forget password link.
-
+There's the Login, Home, and Signup page.
