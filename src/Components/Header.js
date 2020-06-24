@@ -4,7 +4,7 @@ export default function Header() {
     return (
         <header>
             <span>
-                <h1>Hello</h1>
+                <h1>FiReact - A React Firebase Login Application</h1>
             </span>
         </header>
         )
