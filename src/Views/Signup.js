@@ -6,16 +6,15 @@ export default function Signup() {
     <div>
       <h1>This is Sign up page</h1>
       <br/>
-      <Link to="/home">
-        <button>
-          Signup success
-        </button>
-      </Link>
+      <form>
+
+
       <Link to="/">
         <button>
-          Go Back
+          Sign Up!
         </button>
       </Link>
+      </form>
     </div>
   )
 }
