@@ -1,9 +1,9 @@
-import React from 'react';
+import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Header from './Components/Header';
-import Home from './Views/Home';
-import Login from './Views/Login';
-import Signup from './Views/Signup';
+import Header from "./Components/Header";
+import Home from "./Views/Home";
+import Login from "./Views/Login";
+import Signup from "./Views/Signup";
 
 function App() {
   return (
