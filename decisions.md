@@ -6,6 +6,9 @@
 
 1. Login:
 
-A box in center which contains 2 fields, UserName and Password
-A button to Log In
-A forget password link
+A box in center which contains 2 fields, UserName and Password.
+
+A button to Log In.
+
+A forget password link.
+
