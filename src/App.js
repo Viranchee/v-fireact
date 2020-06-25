@@ -10,19 +10,11 @@ function App() {
     <div>
       <Router>
         <Header />
-        <div>
-          <Switch>
-            <Route exact path="/">
-              <Login />
-            </Route>
-            <Route path="/signup">
-              <Signup />
-            </Route>
-            <Route path="/home">
-              <Home />
-            </Route>
-          </Switch>
-        </div>
+        <React.Fragment>
+          <Route exact path="/" component={Login} />
+          <Route path="/signup" component={Signup} />
+          <Route path="/home" component={Home} />
+        </React.Fragment>
       </Router>
     </div>
   );

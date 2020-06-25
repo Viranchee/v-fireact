@@ -7,11 +7,11 @@ function Login(props) {
       <form>
         <ul>
           <li>
-            <label for="name">UserName</label>
+            <label htmlFor="name">UserName</label>
             <input type="text" id="name" name="user_name"></input>
           </li>
           <li>
-            <label for="name">Password</label>
+            <label htmlFor="name">Password</label>
             <input type="password" id="password" name="password"></input>
           </li>
 
