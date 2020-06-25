@@ -44,7 +44,7 @@ const IntervalCopyPaste = () => {
     return () => clearInterval(interval);
   }, []);
 
-  let content = null
+  let content = null // Since 1 conditional, this could be replaced by Conditional JSX Syntax `{ seconds > 10 && <h1>CONTINUE JSX</h1>}`
   if (seconds > 2) {
     content = (
       <div className="App">
