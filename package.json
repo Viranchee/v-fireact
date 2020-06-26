@@ -8,7 +8,6 @@
     "@testing-library/user-event": "^7.1.2",
     "dotenv": "^8.2.0",
     "dotenv-webpack": "^1.8.0",
-    "env-cmd": "^10.1.0",
     "firebase": "^7.15.4",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
@@ -36,9 +35,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "eslint": "^7.3.1",
-    "eslint-plugin-react-hooks": "^4.0.4"
   }
 }
