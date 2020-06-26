@@ -2,7 +2,7 @@ name: Firebase Deploy
 on:
   push:
     branches:
-      - none
+      - none # Pause the workflow temporarily
 
 jobs:
   build:
@@ -15,6 +15,8 @@ jobs:
         run: yarn
       - name: Build Yarn
         run: yarn build
+        # FIXME Add REACT_APP_FIREBASE Environment Variables here
+        # FIXME Artifact not uploaded here
       - name: Archive Production Artifact
         uses: actions/upload-artifact@master
         with:
