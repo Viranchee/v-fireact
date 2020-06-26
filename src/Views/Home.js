@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-
+import app from '../firebase'
 function Home(props) {
 
   let seconds = use1SecInterval()
@@ -11,7 +11,7 @@ function Home(props) {
       <h2> Seconds Elapsed: {seconds}</h2>
       <IntervalCopyPaste />
       <Link to="/">
-        <button>Logout</button>
+        <button onClick={() => app.auth().signOut()} >Logout</button>
       </Link>
     </div>
   );

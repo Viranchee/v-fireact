@@ -1,36 +1,45 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useCallback, useContext } from "react";
+import { withRouter, Redirect } from "react-router"
+import app from "../firebase"
 
-function Login(props) {
-  const [name, setname] = useState("")
+import { AuthContext } from "../Auth"
 
-  function handleSubmit(event) {
-    alert("You Logged In")
-  }
+function Login({ history }) {
 
-  function handleChange(event) {
-    setname(event.target.value)
-  }
+  const handleLogin = useCallback(async event => {
+    event.preventDefault()
+    const { email, password } = event.target.elements
+
+    try {
+      await app.auth().signInWithEmailAndPassword(email.value, password.value)
+      history.push("/")
+    } catch (error) {
+      alert(error)
+    }
+  }, [history])
+
+  const { currentUser } = useContext(AuthContext)
+
+  if (currentUser) { return <Redirect to="/" /> }
 
   return (
     <React.Fragment>
-      <h2>Hey, let's get you logged in</h2>
+      <h2>Log In</h2>
 
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleLogin}>
 
-        <label htmlFor="userName">UserName</label>
+        <label htmlFor="email">Email</label>
         <input
-          type="text"
-          name="userName"
-          onChange={handleChange}
+          name="email"
+          type="email"
+          placeholder="Email"
         />
-
         <br />
-        <label htmlFor="pwd">Password</label>
+        <label htmlFor="password">Password</label>
         <input
+          name="password"
           type="password"
-          name="pwd"
-          id=""
+          placeholder="Password"
         />
         <br />
         <input type="checkbox" name="savePwd" id="" />
@@ -39,11 +48,7 @@ function Login(props) {
         <br />
         <input type="submit" value="Login" />
 
-        <Link to="/signup">
-          <input type="button" value="Sign Up" />
-        </Link>
-
-
+        <input type="button" value="Sign Up" onClick={() => history.push("/signup")} />
 
       </form>
     </React.Fragment>
@@ -52,4 +57,4 @@ function Login(props) {
 
 
 
-export default Login;
+export default withRouter(Login)
