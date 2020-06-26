@@ -58,5 +58,5 @@ const IntervalCopyPaste = () => {
     <React.Fragment>
       {content}
     </React.Fragment>
-  );
-};
+  )
+}
