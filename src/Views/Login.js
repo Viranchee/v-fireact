@@ -25,36 +25,22 @@ function Login({ history }) {
   return (
     <React.Fragment>
       <h2>Log In</h2>
-
       <form onSubmit={handleLogin}>
-
-        <label htmlFor="email">Email</label>
-        <input
-          name="email"
-          type="email"
-          placeholder="Email"
-        />
+        <label>Email
+          <input name="email" type="email" placeholder="Email" />
+        </label>
         <br />
-        <label htmlFor="password">Password</label>
-        <input
-          name="password"
-          type="password"
-          placeholder="Password"
-        />
+        <label>Password
+          <input name="password" type="password" placeholder="Password" />
+        </label>
         <br />
         <input type="checkbox" name="savePwd" id="" />
-        <label htmlFor="savePwd"> Save Password </label>
-
         <br />
         <input type="submit" value="Login" />
-
         <input type="button" value="Sign Up" onClick={() => history.push("/signup")} />
-
       </form>
-    </React.Fragment>
+    </React.Fragment >
   );
 }
-
-
 
 export default withRouter(Login)

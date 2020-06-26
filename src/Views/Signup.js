@@ -24,10 +24,12 @@ const Signup = ({ history }) => {
           Email
           <input name="email" type="email" placeholder="Email" />
         </label>
+        <br />
         <label>
           Password
           <input name="password" type="password" placeholder="Password" />
         </label>
+        <br />
         <button type="submit">Sign Up</button>
       </form>
     </div>
