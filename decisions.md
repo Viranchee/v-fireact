@@ -31,4 +31,6 @@ Afternoon was spent fixing the `.env` file fiasco, which I accidently stored in 
 
 4. ✅ [Firebase Hosting Deployed](https://v-react-login-demo.web.app/login)
 
-5. ❌ Capture User Details on Sign Up
+5. 🚀 Deploy with Github Actions
+
+6. ❌ Capture User Details on Sign Up
