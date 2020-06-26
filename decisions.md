@@ -25,4 +25,4 @@ Afternoon was spent fixing the `.env` file fiasco, which I accidently stored in 
 
 1. Plan: Learn `React Forms`, complete the React `Main Concept` Guides
 1. Making Mock UI: ✅ Login Mock
-1. Log In button working: Once login button is clicked, UserName & Password are sent in an Axios request to Firebase
+1. Log In button working: 🟠 Once login button is clicked, UserName & Password are sent in an Axios request to Firebase
