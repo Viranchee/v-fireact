@@ -37,6 +37,10 @@ Afternoon was spent fixing the `.env` file fiasco, which I accidently stored in 
 
 ### Day 4 - Monday
 
+Solved syncronizing data upload.
+
+#### Good News
+
 1. [✅ ✅ 🟥] Sign Up User, Send User details, Upload Profile Pic
 
 2. [🟥 🟥] Home: View Data, Edit Data
