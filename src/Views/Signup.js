@@ -20,17 +20,11 @@ const Signup = ({ history }) => {
 
     const redirectToHome = () => history.push('/')
 
-    // Upload User's Text field choices
-    const uploadData = async () => {
-      try {
-        await addToStore({ firstName, lastName, age, address, phoneNumber })
-      } catch (error) {
-        alert(error)
-      }
-    }
     signUp(email, password)
-      .then(uploadData())
+      .then((creds) => console.log(creds))
+      .then(() => addToStore({ firstName, lastName, age, address, phoneNumber }))
       .then(redirectToHome)
+      .catch((error) => alert(error))
     // File Upload
   }
   return (
