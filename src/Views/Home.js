@@ -1,5 +1,5 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react'
+import { Link } from 'react-router-dom'
 import app from '../firebase'
 
 
@@ -14,10 +14,10 @@ function Home(props) {
       <PingFirebase />
 
     </div>
-  );
+  )
 }
 
-export default Home;
+export default Home
 
 const PingFirebase = () => {
 

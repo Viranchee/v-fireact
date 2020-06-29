@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react'
 
 export default function Header() {
   return (
@@ -7,5 +7,5 @@ export default function Header() {
         <h1>FiReact - A React Firebase Login Application</h1>
       </span>
     </header>
-  );
+  )
 }

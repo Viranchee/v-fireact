@@ -1,6 +1,6 @@
-import React, { useCallback } from "react";
-import { withRouter } from "react-router";
-import app from "../firebase";
+import React, { useCallback } from 'react'
+import { withRouter } from 'react-router'
+import app from '../firebase'
 import 'firebase/firestore'
 import UserDetailForm from '../Components/Input'
 import LBL from '../Firebase/keys'
@@ -10,17 +10,17 @@ const Signup = ({ history }) => {
   const handleSignUp = useCallback(async event => {
     // Verify form
 
-    event.preventDefault();
-    const { email, password } = event.target.elements;
+    event.preventDefault()
+    const { email, password } = event.target.elements
     try {
       await app
         .auth()
-        .createUserWithEmailAndPassword(email.value, password.value);
-      history.push("/");
+        .createUserWithEmailAndPassword(email.value, password.value)
+      history.push('/')
     } catch (error) {
-      alert(error);
+      alert(error)
     }
-  }, [history]);
+  }, [history])
 
 
   const onSubmit = (allObjs) => {
@@ -28,19 +28,19 @@ const Signup = ({ history }) => {
     const email = allObjs[LBL.Email]
     const password = allObjs[LBL.Password]
 
-    const redirectToHome = () => history.push("/")
+    const redirectToHome = () => history.push('/')
 
     // Send Creds to  
     const signUp = async () => {
       try {
-        console.log("Starting to call api");
+        console.log('Starting to call api')
         await app
           .auth()
           .createUserWithEmailAndPassword(email, password)
-          .then(console.log("USER CREATED"))
+          .then(console.log('USER CREATED'))
         // return Promise.all()
       } catch (error) {
-        console.log(error);
+        console.log(error)
         alert(error)
         return Promise.reject()
       }
@@ -58,7 +58,7 @@ const Signup = ({ history }) => {
           age: allObjs[LBL.Age],
           address: allObjs[LBL.Address],
           phone: allObjs[LBL.Phone]
-        }).then(console.log("DATA LBL.Profile"))
+        }).then(console.log('DATA LBL.Profile'))
       } catch (error) {
         alert(error)
         return Promise.reject()
@@ -67,7 +67,7 @@ const Signup = ({ history }) => {
 
     signUp()
       .then(uploadData())
-      .then(console.log("YO!!! We Uploaded Text Fields"))
+      .then(console.log('YO!!! We Uploaded Text Fields'))
       .then(redirectToHome)
 
     // Register the user first
@@ -91,9 +91,9 @@ const Signup = ({ history }) => {
       <UserDetailForm onSubmit={onSubmit} />
 
     </div >
-  );
-};
+  )
+}
 
-export default withRouter(Signup);
+export default withRouter(Signup)
 
 

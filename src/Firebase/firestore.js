@@ -41,8 +41,8 @@ export const useAddProfilePicture = (imageFile) => {
         console.log(error)
       })
 
-    return () => {}
+    return () => { }
   }, [file])
 }
 
-export const updateStore = () => {}
+export const updateStore = () => { }
