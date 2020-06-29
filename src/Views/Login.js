@@ -1,36 +1,26 @@
 import React, { useCallback, useContext } from 'react'
-import { withRouter, Redirect } from 'react-router'
+import { withRouter } from 'react-router'
 import { AuthContext } from '../Auth'
 import { signIn } from '../Firebase/auth'
 
 function Login({ history }) {
-  const handleLogin = useCallback(async (event) => {
+
+  const handleLogin = useCallback(async event => {
+    event.preventDefault()
     const { email, password } = event.target.elements
-
-    console.log(email, password)
-    await signIn(email.value, password.value)
-      .then(() => alert('Success'))
-      .then(() => history.push('/'))
-      .catch((error) => alert(error))
-  })
-
-  // const handleLogin1 = useCallback(async event => {
-  //   event.preventDefault()
-  //   const { email, password } = event.target.elements
-
-  //   try {
-  //     await app.auth().signInWithEmailAndPassword(email.value, password.value)
-  //     history.push("/")
-  //   } catch (error) {
-  //     alert(error)
-  //   }
-  // }, [history])
+    try {
+      await signIn(email.value, password.value)
+      history.push("/")
+    } catch (error) {
+      alert(error)
+    }
+  }, [history])
 
   const { currentUser } = useContext(AuthContext)
 
-  if (currentUser) {
-    return <Redirect to="/" />
-  }
+  // if (currentUser) {
+  //   return <Redirect to="/" />
+  // }
 
   return (
     <React.Fragment>
@@ -54,11 +44,7 @@ function Login({ history }) {
         <label> Save Password</label>
         <br />
         <input type="submit" value="Login" />
-        <input
-          type="button"
-          value="Sign Up"
-          onClick={() => history.push('/signup')}
-        />
+        <input type="button" value="Sign Up" onClick={() => history.push('/signup')} />
       </form>
     </React.Fragment>
   )
