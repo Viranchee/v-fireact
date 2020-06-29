@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import app from '../firebase'
+import { signOut } from '../Firebase/auth'
+
 
 
 function Home(props) {
@@ -8,7 +9,7 @@ function Home(props) {
     <div>
       <h1> Youre logged in".</h1>
       <Link to="/">
-        <button onClick={() => app.auth().signOut()} >Logout</button>
+        <button onClick={signOut} >Sign Out</button>
       </Link>
       <br />
     </div>
