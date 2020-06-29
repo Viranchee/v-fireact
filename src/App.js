@@ -1,14 +1,14 @@
-import React from "react";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import React from 'react'
+import { BrowserRouter as Router, Route } from 'react-router-dom'
 // Basic HTML Components
-import Header from "./Components/Header";
+import Header from './Components/Header'
 // Context
-import { AuthProvider } from "./Auth"
+import { AuthProvider } from './Auth'
 // Views
-import Home from "./Views/Home";
-import Login from "./Views/Login";
-import Signup from "./Views/Signup";
-import PrivateRoute from "./PrivateRoute";
+import Home from './Views/Home'
+import Login from './Views/Login'
+import Signup from './Views/Signup'
+import PrivateRoute from './PrivateRoute'
 
 function App() {
   return (
@@ -22,7 +22,7 @@ function App() {
         </React.Fragment>
       </Router>
     </AuthProvider>
-  );
+  )
 }
 
-export default App;
+export default App
