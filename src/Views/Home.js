@@ -1,15 +1,11 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { signOut } from '../Firebase/auth'
-import { getFromStore, addToStore } from '../Firebase/firestore'
-
-function logHomeData(data) {
-  console.log(data)
-}
-
+import { getFromStore, updateStore } from '../Firebase/firestore'
+import { EditablePrefilledUserDetailForm } from '../Components/Input'
+import LBL from '../Firebase/keys'
 
 function Home() {
-  const [editMode, setEditMode] = useState(false)
   const [userResult, setUserResult] = useState({
     loading: false,
     data: null,
@@ -39,41 +35,31 @@ function Home() {
       })
   }, [])
 
+  const onSubmit = (allObjs) => {
+    console.log(allObjs)
+    const firstName = allObjs[LBL.First]
+    const lastName = allObjs[LBL.Last]
+    const age = allObjs[LBL.Age]
+    const address = allObjs[LBL.Address]
+    const phoneNumber = allObjs[LBL.Phone]
+
+    updateStore({ firstName, lastName, age, address, phoneNumber })
+      // .then(alert('Updated'))
+      .then(() => window.location.reload())
+      .catch((error) => alert(error))
+  }
+
   return (
     <div>
       <h1> Youre logged in.</h1>
-      <p>Edit Mode {editMode ? '✅' : '🟥'}.</p>
       <p>Your Details Are:</p>
-      {editMode ? <EditDetails userData={userResult} /> : <UserDetails userData={userResult} />}
-      <button onClick={() => setEditMode(!editMode)} >Toggle Edit Mode</button>
+      <EditablePrefilledUserDetailForm userData={userResult.data} onSubmit={onSubmit} />
       <br />
       <Link to="/">
         <button onClick={signOut} >Sign Out</button>
       </Link>
-      <br />
-      <button onClick={() => addToStore({ firstName: 'Hi', lastName: 'Hi', age: 44, address: 'Hi', phoneNumber: 9900 })}>Send Fake Data</button>
-      <br />
     </div>
   )
 }
 
 export default Home
-
-function UserDetails(props) {
-  logHomeData(props)
-  return (
-    <React.Fragment>
-      <p>TODO: DETAILS</p>
-    </React.Fragment>
-  )
-}
-
-function EditDetails(props) {
-  logHomeData(props)
-
-  return (
-    <React.Fragment>
-      <p>TODO: Edit</p>
-    </React.Fragment>
-  )
-}

@@ -9,5 +9,13 @@ const LBL = {
   Profile: 'Profile Picture'
 }
 
+export const DBKey = ({
+  firstName: 'firstName',
+  lastName: 'lastName',
+  age: 'age',
+  address: 'address',
+  phoneNumber: 'phoneNumber'
+})
+
 // HTML Form Keys
 export default LBL

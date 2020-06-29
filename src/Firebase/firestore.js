@@ -17,10 +17,18 @@ export const addToStore = ({ firstName, lastName, age, address, phoneNumber }) =
   return doc
     .set({ firstName, lastName, age, address, phoneNumber })
     .catch((error) => {
-      console.log(error)
+      throw error
     })
 }
 
+export const updateStore = ({ firstName, lastName, age, address, phoneNumber }) => {
+  const doc = database()
+  return doc
+    .update({ firstName, lastName, age, address, phoneNumber })
+    .catch((error) => {
+      throw error
+    })
+}
 export const getFromStore = async () => {
   return database()
     .get()

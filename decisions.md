@@ -43,4 +43,4 @@ Solved syncronizing data upload.
 
 1. [✅ ✅ 🟥] Sign Up User, Send User details, Upload Profile Pic
 
-2. [🟥 🟥] Home: View Data, Edit Data
+2. [✅ ✅ ✅] Home: View Data, Edit Data, Data in Sync
